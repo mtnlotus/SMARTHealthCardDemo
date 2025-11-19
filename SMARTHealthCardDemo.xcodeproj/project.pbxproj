@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B43FCA252ECE121B003825C7 /* SMARTHealthCard in Frameworks */ = {isa = PBXBuildFile; productRef = B43FCA242ECE121B003825C7 /* SMARTHealthCard */; };
+		B43FCA272ECE1223003825C7 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = B43FCA262ECE1223003825C7 /* CodeScanner */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B4B84D5A2EC7C7C9000C9F9A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -29,9 +34,22 @@
 		B4B84D632EC7C7C9000C9F9A /* SMARTHealthCardDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMARTHealthCardDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		B43FCA292ECE149D003825C7 /* Exceptions for "SMARTHealthCardDemo" folder in "SMARTHealthCardDemo" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = B4B84D4B2EC7C7C7000C9F9A /* SMARTHealthCardDemo */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		B4B84D4E2EC7C7C7000C9F9A /* SMARTHealthCardDemo */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				B43FCA292ECE149D003825C7 /* Exceptions for "SMARTHealthCardDemo" folder in "SMARTHealthCardDemo" target */,
+			);
 			path = SMARTHealthCardDemo;
 			sourceTree = "<group>";
 		};
@@ -52,6 +70,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B43FCA272ECE1223003825C7 /* CodeScanner in Frameworks */,
+				B43FCA252ECE121B003825C7 /* SMARTHealthCard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +92,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B43FCA232ECE121B003825C7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		B4B84D432EC7C7C7000C9F9A = {
 			isa = PBXGroup;
 			children = (
 				B4B84D4E2EC7C7C7000C9F9A /* SMARTHealthCardDemo */,
 				B4B84D5C2EC7C7C9000C9F9A /* SMARTHealthCardDemoTests */,
 				B4B84D662EC7C7C9000C9F9A /* SMARTHealthCardDemoUITests */,
+				B43FCA232ECE121B003825C7 /* Frameworks */,
 				B4B84D4D2EC7C7C7000C9F9A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -112,6 +140,8 @@
 			);
 			name = SMARTHealthCardDemo;
 			packageProductDependencies = (
+				B43FCA242ECE121B003825C7 /* SMARTHealthCard */,
+				B43FCA262ECE1223003825C7 /* CodeScanner */,
 			);
 			productName = SMARTHealthCardDemo;
 			productReference = B4B84D4C2EC7C7C7000C9F9A /* SMARTHealthCardDemo.app */;
@@ -171,7 +201,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 2600;
-				LastUpgradeCheck = 2600;
+				LastUpgradeCheck = 2610;
 				TargetAttributes = {
 					B4B84D4B2EC7C7C7000C9F9A = {
 						CreatedOnToolsVersion = 26.0;
@@ -195,6 +225,10 @@
 			);
 			mainGroup = B4B84D432EC7C7C7000C9F9A;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B4AD2AC22EC8F4A3003DDE0E /* XCLocalSwiftPackageReference "../SMARTHealthCard" */,
+				B43FCA202ECE0D8B003825C7 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B4B84D4D2EC7C7C7000C9F9A /* Products */;
 			projectDirPath = "";
@@ -328,6 +362,7 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -385,6 +420,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -400,11 +436,16 @@
 				DEVELOPMENT_TEAM = S4QDBYQ58C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SMARTHealthCardDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Health Card";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code to display your Health Card.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -432,11 +473,16 @@
 				DEVELOPMENT_TEAM = S4QDBYQ58C;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SMARTHealthCardDemo/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Health Card";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Scan QR code to display your Health Card.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -578,6 +624,37 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		B4AD2AC22EC8F4A3003DDE0E /* XCLocalSwiftPackageReference "../SMARTHealthCard" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../SMARTHealthCard;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B43FCA202ECE0D8B003825C7 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mtnlotus/CodeScanner.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B43FCA242ECE121B003825C7 /* SMARTHealthCard */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B4AD2AC22EC8F4A3003DDE0E /* XCLocalSwiftPackageReference "../SMARTHealthCard" */;
+			productName = SMARTHealthCard;
+		};
+		B43FCA262ECE1223003825C7 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B43FCA202ECE0D8B003825C7 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B4B84D442EC7C7C7000C9F9A /* Project object */;
 }

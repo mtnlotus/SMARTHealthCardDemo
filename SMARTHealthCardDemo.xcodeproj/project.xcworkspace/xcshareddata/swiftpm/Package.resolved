@@ -1,0 +1,24 @@
+{
+  "originHash" : "db7560a638263c12c8841bb19c5ba79207dbd776b5a982bd47efcfba55f0c28b",
+  "pins" : [
+    {
+      "identity" : "codescanner",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/mtnlotus/CodeScanner.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "cb7a063b1059b907a1e6bc3d1e9459db07b1a5b5"
+      }
+    },
+    {
+      "identity" : "fhirmodels",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/apple/FHIRModels.git",
+      "state" : {
+        "revision" : "b7fcf26b818704f489719f8cdd9e270aaab37823",
+        "version" : "0.7.0"
+      }
+    }
+  ],
+  "version" : 3
+}
