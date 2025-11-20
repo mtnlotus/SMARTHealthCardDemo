@@ -18,7 +18,7 @@ struct QRCodeScannerButton: View {
     var body: some View {
 		Button(action: {isPresentingScanner = true})
 		{
-			Text("Scan a SMART Health Card")
+			Text("Scan QR Code")
 				.font(.headline)
 				.padding()
 		}

@@ -13,16 +13,21 @@ struct SMARTHealthCardView: View {
 	
 	@Environment(HealthCardModel.self) private var healthCardModel
 	
+	private var sectionFooter: String {
+		guard healthCardModel.jwsCharacterCount > 0 else { return "" }
+		return "QR Code contains \(healthCardModel.jwsCharacterCount) characters (max 1195)"
+	}
+	
     var body: some View {
-		Section("Health Card Data") {
-			Text("\(healthCardModel.numericSerialization?.count ?? 0) bytes")
-			
-			if healthCardModel.fhirResources.isEmpty {
-				Text("No FHIR resources found")
-			}
-			else {
-				ForEach(healthCardModel.fhirResources, id: \.self) { resource in
-					Text("\(type(of: resource).resourceType.rawValue)")
+		if healthCardModel.smartHealthCard != nil {
+			Section(header: Text("Health Card Data"), footer: Text(sectionFooter)) {
+				if healthCardModel.fhirResources.isEmpty {
+					Text("No FHIR resources found")
+				}
+				else {
+					ForEach(healthCardModel.fhirResources, id: \.self) { resource in
+						ResourceView(resource: resource)
+					}
 				}
 			}
 		}

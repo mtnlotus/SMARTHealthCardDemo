@@ -15,6 +15,14 @@ import class ModelsR4.Resource
 		self.numericSerialization = numericSerialization
 	}
 	
+	/// JWS Size = ((Total Data Bits - 76 bits reserved) * 6/20 bits per numeric character * 1/2 JWS character per numeric character = (Total Data Bits - 76)*3/20
+	public var jwsCharacterCount: Int {
+		if let dataBits = numericSerialization {
+			return (dataBits.count - 76) * 3 / 20
+		}
+		return 0
+	}
+	
 	public var numericSerialization: String? {
 		didSet {
 			if let data = numericSerialization, let jws = try? JWS(fromNumeric: data) {
